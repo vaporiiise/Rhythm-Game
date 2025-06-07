@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TriggerFight : MonoBehaviour
 {
-    public GameObject popupSprite; // Drag your popup sprite or UI element here
-    public string sceneToLoad;     // Name of the next scene to load
+    public GameObject popupSprite; 
+    public string sceneToLoad;     
 
     private bool playerInTrigger = false;
 
