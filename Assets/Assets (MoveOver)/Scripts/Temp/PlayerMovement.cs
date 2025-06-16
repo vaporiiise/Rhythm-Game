@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 6f;
-    public float jumpHeight = 1.5f;
-    public float gravity = -9.81f;
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    public float speed = 6f;                // Normal walking speed
+    public float sprintSpeed = 10f;         // Speed while holding Left Shift
+    public float gravity = -9.81f;          // Gravity force
+    public Transform groundCheck;           // Position to check if grounded
+    public float groundDistance = 0.4f;     // Radius for ground check
+    public LayerMask groundMask;            // Which layers count as ground
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -20,24 +20,21 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Ground check
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -4f;
+            velocity.y = -4f; 
         }
 
-        // Input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        // World-space movement (ignores camera angle)
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : speed;
+
         Vector3 move = Vector3.right * x + Vector3.forward * z;
+        controller.Move(move * currentSpeed * Time.deltaTime);
 
-        controller.Move(move * speed * Time.deltaTime);
-
-        // Apply gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
