@@ -1987,7 +1987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupSprite: {fileID: 1500290015}
-  sceneToLoad: SampleScene
+  sceneToLoad: CombatPrototype
 --- !u!4 &119358508 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ed390f24d24647f48aad4660a412247b, type: 3}
@@ -13238,9 +13238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1967343337}
-  offset: {x: -2, y: 0.5, z: -3.3}
+  offset: {x: -5.2, y: 2.7, z: -8.34}
   smoothSpeed: 5
-  xRotationAngle: 20
+  xRotationAngle: 0.4
 --- !u!1 &1190449051
 GameObject:
   m_ObjectHideFlags: 0
@@ -19310,7 +19310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpHeight: 1.5
+  sprintSpeed: 10
   gravity: -9.81
   groundCheck: {fileID: 505872618}
   groundDistance: 0.4

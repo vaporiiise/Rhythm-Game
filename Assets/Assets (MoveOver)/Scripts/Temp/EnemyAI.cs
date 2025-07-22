@@ -15,6 +15,8 @@ public class EnemyAI : MonoBehaviour
     private Vector3 wanderTarget;
     private float lastAttackTime;
     private PlayerHealth playerHealth;
+    
+    public Transition transition;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class EnemyAI : MonoBehaviour
 
         if (player != null)
             playerHealth = player.GetComponent<PlayerHealth>();
+
+        transition = GetComponent<Transition>();
     }
 
     void Update()
@@ -71,6 +75,8 @@ public class EnemyAI : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
+            GotoNextLevel();
+            
         }
     }
 
@@ -95,5 +101,19 @@ public class EnemyAI : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    void GotoNextLevel()
+    {
+        Transition transition = FindObjectOfType<Transition>();
+    
+        if (transition != null)
+        {
+            transition.LoadNextLevel(); // Call the method directly
+        }
+        else
+        {
+            Debug.LogError("Transition object not found at runtime!");
+        }
     }
 }
