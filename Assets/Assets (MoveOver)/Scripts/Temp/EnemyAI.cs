@@ -15,6 +15,8 @@ public class EnemyAI : MonoBehaviour
     private Vector3 wanderTarget;
     private float lastAttackTime;
     private PlayerHealth playerHealth;
+    public string enemyID;
+
     
     public Transition transition;
 
@@ -74,6 +76,12 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("Enemy attacks!");
         if (playerHealth != null)
         {
+            if (GameManager.Instance.rhythmSuccess && GameManager.Instance.lastEnemyID == enemyID)
+                return; // Already cleared
+
+            // Start rhythm battle
+            GameManager.Instance.lastEnemyID = enemyID;
+            GameManager.Instance.rhythmSuccess = false;
             playerHealth.TakeDamage(damage);
             GotoNextLevel();
             

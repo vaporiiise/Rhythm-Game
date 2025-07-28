@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatPrototype.unity
     guid: fa9f08df36f135c4db84c3cacae8ba47
   - enabled: 1
+    path: Assets/Scenes/RhythmScene.unity
+    guid: 846f4473d20491a4494f8df6594c62c9
+  - enabled: 1
     path: Assets/Assets (MoveOver)/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

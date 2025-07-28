@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 public class Transition : MonoBehaviour
 {
     public Animator transition;
+    public int sceneToLoad;
     
     public float transitionTime;
 
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(sceneToLoad));
     }
 
     IEnumerator LoadLevel(int levelIndex)

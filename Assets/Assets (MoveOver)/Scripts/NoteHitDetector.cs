@@ -36,6 +36,7 @@ public class NoteHitDetector : MonoBehaviour
                 if (smallestTimeDiff <= perfectWindow)
                 {
                     Debug.Log("Perfect!");
+                    ScoreManager.Instance.RegisterPerfect();
                 }
                 else if (smallestTimeDiff <= goodWindow)
                 {

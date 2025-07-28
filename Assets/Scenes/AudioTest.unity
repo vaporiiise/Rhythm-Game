@@ -259,7 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 325792056}
   bufferSize: 2048
-  gThresh: 0.1
+  gThresh: 0.14
   onBeat:
     m_PersistentCalls:
       m_Calls:
@@ -300,8 +300,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09e767d458610e149840d0fc6dfa367c, type: 3}
-  m_Resource: {fileID: 8300000, guid: 09e767d458610e149840d0fc6dfa367c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 68f6aad01e1c1104e8cfc98169a58278, type: 3}
+  m_Resource: {fileID: 8300000, guid: 68f6aad01e1c1104e8cfc98169a58278, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
